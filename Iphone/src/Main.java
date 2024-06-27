@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import aparelho.Iphone;
+import interfaces.AparelhoTelefonico;
+import interfaces.NavegadorNaInternet;
+import interfaces.ReprodutorMusical;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Iphone iphone = new Iphone();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        AparelhoTelefonico aparelhoTelefonico = iphone;
+        aparelhoTelefonico.atender();
+        aparelhoTelefonico.iniciarCorreioVoz();
+        aparelhoTelefonico.ligar("205443543");
+
+        ReprodutorMusical reprodutorMusical = iphone;
+        reprodutorMusical.pausar();
+        reprodutorMusical.selecionarMusica("Voando pro Pará");
+        reprodutorMusical.tocar();
+
+        NavegadorNaInternet navegadorNaInternet = iphone;
+        navegadorNaInternet.adicionarNovaAba();
+        navegadorNaInternet.atualizarPagina();
+        navegadorNaInternet.exibirPagina("youtube.com");
     }
 }
